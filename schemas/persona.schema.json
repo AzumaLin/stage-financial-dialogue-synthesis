@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Client persona",
+  "type": "object",
+  "required": [
+    "name", "gender", "age", "region", "role", "employment_details",
+    "family_relationship", "living_conditions", "income_level",
+    "assets_summary", "liabilities_summary", "consultation_purpose_brief",
+    "consultation_purpose", "financial_goals", "risk_tolerance",
+    "financial_literacy", "current_financial_stress_level",
+    "emotional_and_financial_state", "language_style", "health",
+    "consultation_context", "persona_brief", "client_file"
+  ],
+  "properties": {
+    "name": {"type": "string"},
+    "gender": {"type": "string"},
+    "age": {"type": ["integer", "null"]},
+    "region": {"type": "string"},
+    "role": {"type": "string", "enum": ["client", "customer"]},
+    "employment_details": {
+      "type": "object",
+      "required": ["job_title", "employment_status", "working_conditions"],
+      "properties": {
+        "job_title": {"type": "string"},
+        "employment_status": {"type": "string"},
+        "working_conditions": {"type": "string"}
+      }
+    },
+    "family_relationship": {"type": "string"},
+    "living_conditions": {"type": "string"},
+    "income_level": {"type": "string"},
+    "assets_summary": {"type": "string"},
+    "liabilities_summary": {"type": "string"},
+    "consultation_purpose_brief": {"type": "string"},
+    "consultation_purpose": {"type": "string"},
+    "financial_goals": {
+      "type": "object",
+      "required": ["short_term", "medium_term", "long_term"],
+      "properties": {
+        "short_term": {"type": "string"},
+        "medium_term": {"type": "string"},
+        "long_term": {"type": "string"}
+      }
+    },
+    "risk_tolerance": {"type": "string"},
+    "financial_literacy": {"type": "string"},
+    "current_financial_stress_level": {"type": "string"},
+    "emotional_and_financial_state": {"type": "string"},
+    "language_style": {"type": "string"},
+    "health": {"type": "string"},
+    "consultation_context": {"type": "string", "enum": ["new", "returning"]},
+    "persona_brief": {"type": "string"},
+    "client_file": {"type": "string"}
+  },
+  "additionalProperties": true
+}
